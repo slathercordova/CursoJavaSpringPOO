@@ -53,5 +53,6 @@ public class Ejercicio18 {
             }
         }
         System.out.println("El número se encontró en la posición "+posicion);
+        //  version original
     }
 }
