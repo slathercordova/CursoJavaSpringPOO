@@ -25,8 +25,14 @@ public class LibraryItem {
         return isLoaned;
     }
 
-    public void setLoaned(boolean loaned) {
+    public void setIsLoaned(boolean loaned) {
         isLoaned = loaned;
+    }
+
+    public LibraryItem(String title, int itemID, boolean isLoaned) {
+        this.title = title;
+        this.itemID = itemID;
+        this.isLoaned = isLoaned;
     }
 
     public String showDetails() {
