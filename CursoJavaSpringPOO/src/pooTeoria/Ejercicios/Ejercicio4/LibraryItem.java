@@ -1,6 +1,7 @@
 package pooTeoria.Ejercicios.Ejercicio4;
 
 public class LibraryItem {
+    //  superclase que tiene book dvd y otros
     private String title;
     private int itemID;
     private boolean isLoaned;
