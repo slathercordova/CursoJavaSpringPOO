@@ -6,7 +6,7 @@ public class LibraryUser {
     //  usuario de la biblioteca
     private String userName;
     private String userId;
-    private ArrayList<LibraryItem> loanedItems;
+    private ArrayList<LibraryItem> loanedItems = new ArrayList<>();
 
     public String getUserName() {
         return userName;

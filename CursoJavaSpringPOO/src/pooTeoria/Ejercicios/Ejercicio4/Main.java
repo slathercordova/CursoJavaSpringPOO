@@ -39,6 +39,11 @@ public class Main {
         //  creamos la libreria
         Library libreria = new Library();
         libreria.setNombre("Libreria 1");
+
+
+        //  FORMA 1
+
+        /*
         //  metemos todos los items creados a un array para pasarlo a la libreria
         ArrayList<LibraryItem> libraryItems = new ArrayList<>();
         libraryItems.add(item1);
@@ -48,34 +53,62 @@ public class Main {
         libraryItems.add(item5);
         libraryItems.add(item6);
         libreria.setLibraryItems(libraryItems);
+        //  metemos todos los items de usuarios a un array para pasarlo a la libreria
+        ArrayList<LibraryUser> UserItem = new ArrayList<>();
+        UserItem.add(usuario1);
+        UserItem.add(usuario2);
+        libreria.setLibraryUser(UserItem);
 
-        /*System.out.println(usuario1.showUserDetails());
+        *//*System.out.println(usuario1.showUserDetails());
         System.out.println(usuario2.showUserDetails());
+        *//*
         */
+
+        //  FORMA 2
+        libreria.addItem(item1);
+        libreria.addItem(item2);
+        libreria.addItem(item3);
+        libreria.addItem(item4);
+        libreria.addItem(item5);
+        libreria.addItem(item6);
+
+        //System.out.println(libreria.showAllItems());
+
+        libreria.addUser(usuario1);
+        libreria.addUser(usuario2);
 
         System.out.println("================================");
         System.out.println("INICIO DE LIBRERIA");
         System.out.println(libreria.mostrarLibreria());
 
-        System.out.println("");
-
         System.out.println("Alquilando el libro "+item1.getItemID()+"-"+item1.getTitle());
-        libreria.loanItem(item1);
+        libreria.loanItem(1,"LCORDOVA");
         System.out.println(libreria.mostrarLibreria());
 
         //  forzamos error porque lo acabamos de alquilar
         System.out.println("FORZAMOS ERROR Alquilando el libro "+item1.getItemID()+"-"+item1.getTitle());
-        libreria.loanItem(item1);
-
-        System.out.println("");
+        libreria.loanItem(1,"LCORDOVA");
 
         //  devolvemos el libro
         System.out.println("Devolviendo el libro "+item1.getItemID()+"-"+item1.getTitle());
-        libreria.returnItem(item1);
+        libreria.returnItem(1,"LCORDOVA");
         System.out.println(libreria.mostrarLibreria());
 
         System.out.println("FORZAMOS ERROR Devolviendo el libro "+item1.getItemID()+"-"+item1.getTitle());
         //  forzamos error en devolver algo que ya está devuelto
-        libreria.returnItem(item1);
+        libreria.returnItem(1,"LCORDOVA");
+
+        System.out.println("=================================================");
+        System.out.println("===============RESULTADO 2=======================");
+        System.out.println("=================================================");
+        /*
+        * dado un id de un item, quiero saber si está prestado
+        * y si está prestado a que usuario le pertenece el prestamo
+        * */
+        System.out.println("Alquilando el libro "+item5.getItemID()+"-"+item5.getTitle());
+        libreria.loanItem(5,"LCORDOVA");
+        System.out.println(libreria.mostrarLibreria());
+
+        libreria.verificarPrestamo(5);
     }
 }
